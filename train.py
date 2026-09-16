@@ -1,17 +1,14 @@
 import json
 import random
-import sys
 from pathlib import Path
 
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+from minigpt import MiniGPT
 
-from model.minigpt import MiniGPT
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 
 # ============================================================
@@ -34,9 +31,9 @@ early_stopping_patience = 5
 seed = 42
 
 DATA_PATH = PROJECT_ROOT / "data" / "input.txt"
-BEST_CHECKPOINT_PATH = PROJECT_ROOT / "train" / "minigpt_best.pth"
-FINAL_CHECKPOINT_PATH = PROJECT_ROOT / "train" / "minigpt_final.pth"
-HISTORY_PATH = PROJECT_ROOT / "train" / "history.json"
+BEST_CHECKPOINT_PATH = PROJECT_ROOT / "checkpoints" / "minigpt_best.pth"
+FINAL_CHECKPOINT_PATH = PROJECT_ROOT / "checkpoints" / "minigpt_final.pth"
+HISTORY_PATH = PROJECT_ROOT / "checkpoints" / "history.json"
 
 
 # ============================================================

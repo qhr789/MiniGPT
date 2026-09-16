@@ -6,11 +6,10 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
 
-from utils.checkpoint import load_model_from_checkpoint
-
+from minigpt.checkpoint import load_model_from_checkpoint
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DEFAULT_CHECKPOINT = PROJECT_ROOT / "train" / "minigpt_best.pth"
+DEFAULT_CHECKPOINT = PROJECT_ROOT / "checkpoints" / "minigpt_best.pth"
 DATA_PATH = PROJECT_ROOT / "data" / "input.txt"
 
 
