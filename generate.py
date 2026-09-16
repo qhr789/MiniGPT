@@ -4,11 +4,10 @@ from pathlib import Path
 import torch
 import torch.nn.functional as F
 
-from utils.checkpoint import load_model_from_checkpoint
-
+from minigpt.checkpoint import load_model_from_checkpoint
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DEFAULT_CHECKPOINT = PROJECT_ROOT / "train" / "minigpt_best.pth"
+DEFAULT_CHECKPOINT = PROJECT_ROOT / "checkpoints" / "minigpt_best.pth"
 
 
 def get_device():

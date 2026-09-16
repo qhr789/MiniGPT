@@ -2,7 +2,7 @@ from pathlib import Path
 
 import torch
 
-from model.minigpt import MiniGPT
+from .model import MiniGPT
 
 
 def load_checkpoint(checkpoint_path, device):
